@@ -195,11 +195,21 @@ import {
   deleteDataRLEmpatTitikSatu,
   getDataRLEmpatTitikSatu,
   getDataRLEmpatTitikSatuById,
-  getRLEmpatTitikDua,
-  getRLEmpatTitikTiga,
+  // getRLEmpatTitikDua,
+  // getRLEmpatTitikTiga,
   insertDataRLEmpatTitikSatu,
   updateDataRLEmpatTitikSatu,
 } from "../controllers/RLEmpatTitikSatuController.js"
+
+// RL 4.2
+import {
+  getRLEmpatTitikDua
+} from "../controllers/RLEmpatTitikDuaController.js"
+
+// RL 4.3
+import {
+  getRLEmpatTitikTiga
+} from "../controllers/RLEmpatTitikTigaController.js"
 
 // RL 3.13 NEW
 import {
