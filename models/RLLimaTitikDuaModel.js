@@ -117,8 +117,10 @@ export const get = (req, callback) => {
         sqlFilterValue.push(req.query.rsId.split(';'))
     }
     if (periode != null) {
-        filter.push("rl_lima_titik_satu_detail.periode = ? ")
-        sqlFilterValue.push(periode)
+        const customDate = new Date(periode)
+        filter.push("YEAR(rl_lima_titik_satu_detail.periode) = ? AND MONTH(rl_lima_titik_satu_detail.periode) = ? ")
+        sqlFilterValue.push(customDate.getFullYear())
+        sqlFilterValue.push(customDate.getMonth() + 1)
     }
 
     let sqlFilter = ''
