@@ -34,6 +34,12 @@ export const rlTigaTitikDuaDetail = databaseSIRS.define('rl_tiga_titik_dua_detai
     pasien_masuk: {
         type: DataTypes.INTEGER
     },
+    pasien_pindahan: {
+        type: DataTypes.INTEGER
+    },
+    pasien_dipindahkan: {
+        type: DataTypes.INTEGER
+    },
     pasien_keluar_hidup: {
         type: DataTypes.INTEGER
     },
@@ -79,6 +85,8 @@ export const get = (req, callback) => {
         'rl_tiga_titik_dua_jenis_pelayanan.nama as nama_jenis_pelayanan, ' +
         'rl_tiga_titik_dua_detail.pasien_awal_bulan, ' +
         'rl_tiga_titik_dua_detail.pasien_masuk, ' +
+        'rl_tiga_titik_dua_detail.pasien_pindahan, ' +
+        'rl_tiga_titik_dua_detail.pasien_dipindahkan, ' +
         'rl_tiga_titik_dua_detail.pasien_keluar_hidup, ' +
         'rl_tiga_titik_dua_detail.pasien_keluar_mati_kurang_dari_48_jam, ' +
         'rl_tiga_titik_dua_detail.pasien_keluar_mati_lebih_dari_atau_sama_dengan_48_jam, ' +
@@ -150,6 +158,8 @@ export const show = (id, callback) => {
         'rl_tiga_titik_dua_jenis_pelayanan.nama as nama_jenis_pelayanan, ' +
         'rl_tiga_titik_dua_detail.pasien_awal_bulan, ' +
         'rl_tiga_titik_dua_detail.pasien_masuk, ' +
+        'rl_tiga_titik_dua_detail.pasien_pindahan, ' +
+        'rl_tiga_titik_dua_detail.pasien_dipindahkan, ' +
         'rl_tiga_titik_dua_detail.pasien_keluar_hidup, ' +
         'rl_tiga_titik_dua_detail.pasien_keluar_mati_kurang_dari_48_jam, ' +
         'rl_tiga_titik_dua_detail.pasien_keluar_mati_lebih_dari_atau_sama_dengan_48_jam, ' +
