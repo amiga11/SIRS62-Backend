@@ -169,7 +169,7 @@ export const insertRLTigaTitikDua =  async (req, res) => {
                 pasien_awal_bulan: value.pasienAwalBulan,
                 pasien_masuk: value.pasienMasuk,
                 pasien_pindahan: value.pasienPindahan,
-                pasien_dipindahan: value.pasienDipindahkan,
+                pasien_dipindahkan: value.pasienDipindahkan,
                 pasien_keluar_hidup: value.pasienKeluarHidup,
                 pasien_keluar_mati_kurang_dari_48_jam: value.pasienKeluarMatiKurangDari48Jam,
                 pasien_keluar_mati_lebih_dari_atau_sama_dengan_48_jam: value.pasienKeluarMatiLebihDariAtauSamaDengan48Jam,
