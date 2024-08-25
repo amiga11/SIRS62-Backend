@@ -64,6 +64,8 @@ export const insertRLTigaTitikDua =  async (req, res) => {
                     rlTigaTitikDuaJenisPelayananId: Joi.number().required(),
                     pasienAwalBulan: Joi.number().required(),
                     pasienMasuk: Joi.number().required(),
+                    pasienPindahan: Joi.number().required(),
+                    pasienDipindahkan: Joi.number().required(),
                     pasienKeluarHidup: Joi.number().required(),
                     pasienKeluarMatiKurangDari48Jam: Joi.number().required(),
                     pasienKeluarMatiLebihDariAtauSamaDengan48Jam: Joi.number().required(),
@@ -93,8 +95,8 @@ export const insertRLTigaTitikDua =  async (req, res) => {
     let errorJumlahAlokasiTempatTidurAwalBulan = false
     req.body.data.forEach(element => { 
         // hitung jumlah pasien akhir bulan
-        const pasienAkhirBulan = (parseInt(element.pasienAwalBulan) + parseInt(element.pasienMasuk)) -
-        (parseInt(element.pasienKeluarHidup) + parseInt(element.pasienKeluarMatiKurangDari48Jam) + 
+        const pasienAkhirBulan = (parseInt(element.pasienAwalBulan) + parseInt(element.pasienMasuk) + parseInt(element.pasienPindahan)) -
+        (parseInt(element.pasienDipindahkan) + parseInt(element.pasienKeluarHidup) + parseInt(element.pasienKeluarMatiKurangDari48Jam) + 
         parseInt(element.pasienKeluarMatiLebihDariAtauSamaDengan48Jam))
 
         // hitung jumlah hari perawatan
@@ -166,6 +168,8 @@ export const insertRLTigaTitikDua =  async (req, res) => {
                 rl_tiga_titik_dua_jenis_pelayanan_id: value.rlTigaTitikDuaJenisPelayananId,
                 pasien_awal_bulan: value.pasienAwalBulan,
                 pasien_masuk: value.pasienMasuk,
+                pasien_pindahan: value.pasienPindahan,
+                pasien_dipindahkan: value.pasienDipindahkan,
                 pasien_keluar_hidup: value.pasienKeluarHidup,
                 pasien_keluar_mati_kurang_dari_48_jam: value.pasienKeluarMatiKurangDari48Jam,
                 pasien_keluar_mati_lebih_dari_atau_sama_dengan_48_jam: value.pasienKeluarMatiLebihDariAtauSamaDengan48Jam,
@@ -216,8 +220,8 @@ export const updateRLTigaTitikDua = async(req,res)=>{
     let errorJumlahAlokasiTempatTidurAwalBulan = false
 
     // hitung jumlah pasien akhir bulan
-    const pasienAkhirBulan = (parseInt(req.body.pasienAwalBulan) + parseInt(req.body.pasienMasuk)) -
-    (parseInt(req.body.pasienKeluarHidup) + parseInt(req.body.pasienKeluarMatiKurangDari48Jam) + 
+    const pasienAkhirBulan = (parseInt(req.body.pasienAwalBulan) + parseInt(req.body.pasienMasuk) + parseInt(req.body.pasienPindahan)) -
+    (parseInt(req.body.pasienDipindahkan) + parseInt(req.body.pasienKeluarHidup) + parseInt(req.body.pasienKeluarMatiKurangDari48Jam) + 
     parseInt(req.body.pasienKeluarMatiLebihDariAtauSamaDengan48Jam))
 
     // hitung jumlah hari perawatan
@@ -271,6 +275,8 @@ export const updateRLTigaTitikDua = async(req,res)=>{
             {
                 pasien_awal_bulan: req.body.pasienAwalBulan,
                 pasien_masuk: req.body.pasienMasuk,
+                pasien_pindahan: req.body.pasienPindahan,
+                pasien_dipindahkan: req.body.pasienDipindahkan,
                 pasien_keluar_hidup: req.body.pasienKeluarHidup,
                 pasien_keluar_mati_kurang_dari_48_jam: req.body.pasienKeluarMatiKurangDari48Jam,
                 pasien_keluar_mati_lebih_dari_atau_sama_dengan_48_jam: req.body.pasienKeluarMatiLebihDariAtauSamaDengan48Jam,

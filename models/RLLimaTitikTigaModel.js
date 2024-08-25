@@ -17,9 +17,9 @@ export const get = (req, callback) => {
         'INNER JOIN icd ' +
         'ON icd.id =  rl_lima_titik_satu_detail.icd_id '
 
-    const sqlWhere = 'WHERE '
+    const sqlWhere = 'WHERE ' 
 
-    const sqlGroupBy = 'GROUP BY icd.icd_code_group '
+    const sqlGroupBy = 'GROUP BY icd.icd_code_group, icd.description_code_group '
 
     const sqlOrder = 'ORDER BY total_kunjungan DESC '
 
@@ -30,6 +30,8 @@ export const get = (req, callback) => {
 
     const rsId = req.query.rsId || null
     const periode = req.query.periode || null
+
+    filter.push("icd.icd_code NOT LIKE '%Z%' AND icd.icd_code NOT LIKE '%R%' AND icd.icd_code NOT LIKE '%08.0%' AND icd.icd_code NOT LIKE '%08.2%'")
 
     if (rsId != null) {
         filter.push("rl_lima_titik_satu_detail.rs_id IN ( ? ) ")
