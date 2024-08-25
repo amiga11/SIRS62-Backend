@@ -28,10 +28,16 @@ export const rlTigaTitikLimaDetail = databaseSIRS.define('rl_tiga_titik_lima_det
     jenis_kegiatan_id: {
         type: DataTypes.INTEGER
     },
-    kunjungan_pasien_dalam_kabkota: {
+    kunjungan_pasien_dalam_kabkota_laki: {
         type: DataTypes.INTEGER
     },
-    kunjungan_pasien_luar_kabkota: {
+    kunjungan_pasien_luar_kabkota_laki: {
+        type: DataTypes.INTEGER
+    },
+    kunjungan_pasien_dalam_kabkota_perempuan: {
+        type: DataTypes.INTEGER
+    },
+    kunjungan_pasien_luar_kabkota_perempuan: {
         type: DataTypes.INTEGER
     },
     total_kunjungan: {

@@ -311,12 +311,23 @@ export const insertDataRLEmpatTitikSatu = async (req, res) => {
         user_id : req.user.id,
       };
     });
-    // console.log(dataDetail)
 
-    if (
-      dataDetail[0].total_pas_keluar_mati <=
-      dataDetail[0].total_pas_hidup_mati
-    ) {
+    if (dataDetail[0].total_pas_keluar_mati > dataDetail[0].total_pas_hidup_mati) {
+      res.status(400).send({
+        status: false,
+        message: "Data Jumlah Pasien Mati Lebih Dari Jumlah Pasien Hidup/Mati",
+      });
+    } else if (dataDetail[0].jmlh_pas_keluar_mati_gen_l > dataDetail[0].jmlh_pas_hidup_mati_gen_l){
+      res.status(400).send({
+        status: false,
+        message: "Data Jumlah Pasien Mati Laki-Laki Lebih Dari Jumlah Pasien Hidup/Mati Laki-Laki",
+      });
+    } else if (dataDetail[0].jmlh_pas_keluar_mati_gen_p > dataDetail[0].jmlh_pas_hidup_mati_gen_p){
+      res.status(400).send({
+        status: false,
+        message: "Data Jumlah Pasien Mati Perempuan Lebih Dari Jumlah Pasien Hidup/Mati Perempuan",
+      });
+    } else {
       const resultInsertDetail = await rlEmpatTitikSatuDetail.bulkCreate(dataDetail, {
         transaction,
         updateOnDuplicate: [
@@ -385,14 +396,90 @@ export const insertDataRLEmpatTitikSatu = async (req, res) => {
         data: {
           id: resultInsertHeader.id,
         },
-      });
-    } else {
-      res.status(400).send({
-        status: false,
-        message: "Data Jumlah Pasien Mati Lebih Dari Jumlah Pasien Hidup/Mati",
-      });
-      await transaction.rollback();
+      })
     }
+    // if (
+    //   dataDetail[0].total_pas_keluar_mati <= dataDetail[0].total_pas_hidup_mati &&
+    //   dataDetail[0].jmlh_pas_keluar_mati_gen_l <= dataDetail[0].jmlh_pas_hidup_mati_gen_l &&
+    //   dataDetail[0].jmlh_pas_keluar_mati_gen_p <= dataDetail[0].jmlh_pas_hidup_mati_gen_p
+      
+    // ) {
+    //   const resultInsertDetail = await rlEmpatTitikSatuDetail.bulkCreate(dataDetail, {
+    //     transaction,
+    //     updateOnDuplicate: [
+    //       "jmlh_pas_hidup_mati_umur_gen_0_1jam_l",
+    //       "jmlh_pas_hidup_mati_umur_gen_0_1jam_p",
+    //       "jmlh_pas_hidup_mati_umur_gen_1_23jam_l",
+    //       "jmlh_pas_hidup_mati_umur_gen_1_23jam_p",
+    //       "jmlh_pas_hidup_mati_umur_gen_1_7hr_l",
+    //       "jmlh_pas_hidup_mati_umur_gen_1_7hr_p",
+    //       "jmlh_pas_hidup_mati_umur_gen_8_28hr_l",
+    //       "jmlh_pas_hidup_mati_umur_gen_8_28hr_p",
+    //       "jmlh_pas_hidup_mati_umur_gen_29hr_3bln_l",
+    //       "jmlh_pas_hidup_mati_umur_gen_29hr_3bln_p",
+    //       "jmlh_pas_hidup_mati_umur_gen_3_6bln_l",
+    //       "jmlh_pas_hidup_mati_umur_gen_3_6bln_p",
+    //       "jmlh_pas_hidup_mati_umur_gen_6_11bln_l",
+    //       "jmlh_pas_hidup_mati_umur_gen_6_11bln_p",
+    //       "jmlh_pas_hidup_mati_umur_gen_1_4th_l",
+    //       "jmlh_pas_hidup_mati_umur_gen_1_4th_p",
+    //       "jmlh_pas_hidup_mati_umur_gen_5_9th_l",
+    //       "jmlh_pas_hidup_mati_umur_gen_5_9th_p",
+    //       "jmlh_pas_hidup_mati_umur_gen_10_14th_l",
+    //       "jmlh_pas_hidup_mati_umur_gen_10_14th_p",
+    //       "jmlh_pas_hidup_mati_umur_gen_15_19th_l",
+    //       "jmlh_pas_hidup_mati_umur_gen_15_19th_p",
+    //       "jmlh_pas_hidup_mati_umur_gen_20_24th_l",
+    //       "jmlh_pas_hidup_mati_umur_gen_20_24th_p",
+    //       "jmlh_pas_hidup_mati_umur_gen_25_29th_l",
+    //       "jmlh_pas_hidup_mati_umur_gen_25_29th_p",
+    //       "jmlh_pas_hidup_mati_umur_gen_30_34th_l",
+    //       "jmlh_pas_hidup_mati_umur_gen_30_34th_p",
+    //       "jmlh_pas_hidup_mati_umur_gen_35_39th_l",
+    //       "jmlh_pas_hidup_mati_umur_gen_35_39th_p",
+    //       "jmlh_pas_hidup_mati_umur_gen_40_44th_l",
+    //       "jmlh_pas_hidup_mati_umur_gen_40_44th_p",
+    //       "jmlh_pas_hidup_mati_umur_gen_45_49th_l",
+    //       "jmlh_pas_hidup_mati_umur_gen_45_49th_p",
+    //       "jmlh_pas_hidup_mati_umur_gen_50_54th_l",
+    //       "jmlh_pas_hidup_mati_umur_gen_50_54th_p",
+    //       "jmlh_pas_hidup_mati_umur_gen_55_59th_l",
+    //       "jmlh_pas_hidup_mati_umur_gen_55_59th_p",
+    //       "jmlh_pas_hidup_mati_umur_gen_60_64th_l",
+    //       "jmlh_pas_hidup_mati_umur_gen_60_64th_p",
+    //       "jmlh_pas_hidup_mati_umur_gen_65_69th_l",
+    //       "jmlh_pas_hidup_mati_umur_gen_65_69th_p",
+    //       "jmlh_pas_hidup_mati_umur_gen_70_74th_l",
+    //       "jmlh_pas_hidup_mati_umur_gen_70_74th_p",
+    //       "jmlh_pas_hidup_mati_umur_gen_75_79th_l",
+    //       "jmlh_pas_hidup_mati_umur_gen_75_79th_p",
+    //       "jmlh_pas_hidup_mati_umur_gen_80_84th_l",
+    //       "jmlh_pas_hidup_mati_umur_gen_80_84th_p",
+    //       "jmlh_pas_hidup_mati_umur_gen_lebih85th_l",
+    //       "jmlh_pas_hidup_mati_umur_gen_lebih85th_p",
+    //       "jmlh_pas_hidup_mati_gen_l",
+    //       "jmlh_pas_hidup_mati_gen_p",
+    //       "total_pas_hidup_mati",
+    //       "jmlh_pas_keluar_mati_gen_l",
+    //       "jmlh_pas_keluar_mati_gen_p",
+    //       "total_pas_keluar_mati"
+    //     ],
+    //   });
+    //   await transaction.commit();
+    //   res.status(201).send({
+    //     status: true,
+    //     message: "data created",
+    //     data: {
+    //       id: resultInsertHeader.id,
+    //     },
+    //   });
+    // } else {
+    //   res.status(400).send({
+    //     status: false,
+    //     message: "Data Jumlah Pasien Mati Lebih Dari Jumlah Pasien Hidup/Mati",
+    //   });
+    //   await transaction.rollback();
+    // }
   } catch (error) {
     if (transaction) {
       if (error.name == "SequelizeForeignKeyConstraintError") {

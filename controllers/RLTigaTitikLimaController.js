@@ -43,8 +43,10 @@ export const insertDataRLTigaTitikLima =  async (req, res) => {
             .items(
                 Joi.object().keys({
                     jenisKegiatanId: Joi.number().required(),
-                    kunjungan_pasien_dalam_kabkota: Joi.number().required(),
-                    kunjungan_pasien_luar_kabkota: Joi.number().required(),
+                    kunjungan_pasien_dalam_kabkota_laki: Joi.number().required(),
+                    kunjungan_pasien_luar_kabkota_laki: Joi.number().required(),
+                    kunjungan_pasien_luar_kabkota_perempuan: Joi.number().required(),
+                    kunjungan_pasien_dalam_kabkota_perempuan: Joi.number().required(),
                     total_kunjungan: Joi.number().required()
                 }).required()
             ).required()
@@ -74,8 +76,10 @@ export const insertDataRLTigaTitikLima =  async (req, res) => {
                 tahun: req.body.tahunDanBulan,
                 rl_tiga_titik_lima_id: resultInsertHeader.id,
                 jenis_kegiatan_id: value.jenisKegiatanId,
-                kunjungan_pasien_dalam_kabkota: value.kunjungan_pasien_dalam_kabkota,
-                kunjungan_pasien_luar_kabkota: value.kunjungan_pasien_luar_kabkota,
+                kunjungan_pasien_dalam_kabkota_laki : value.kunjungan_pasien_dalam_kabkota_laki,
+                kunjungan_pasien_luar_kabkota_perempuan : value.kunjungan_pasien_luar_kabkota_perempuan,
+                kunjungan_pasien_dalam_kabkota_perempuan: value.kunjungan_pasien_dalam_kabkota_perempuan,
+                kunjungan_pasien_luar_kabkota_laki: value.kunjungan_pasien_luar_kabkota_laki,
                 total_kunjungan: value.total_kunjungan,
                 user_id: req.user.id
             }
@@ -84,8 +88,10 @@ export const insertDataRLTigaTitikLima =  async (req, res) => {
         const resultInsertDetail = await rlTigaTitikLimaDetail.bulkCreate(dataDetail, { 
             transaction,
             updateOnDuplicate: [
-                "kunjungan_pasien_dalam_kabkota",
-                "kunjungan_pasien_luar_kabkota",
+                "kunjungan_pasien_dalam_kabkota_laki",   
+                "kunjungan_pasien_luar_kabkota_laki",   
+                "kunjungan_pasien_luar_kabkota_perempuan",   
+                "kunjungan_pasien_dalam_kabkota_perempuan", 
                 "total_kunjungan",
             ],
         })
