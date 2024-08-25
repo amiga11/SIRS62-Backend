@@ -1,9 +1,9 @@
 ### Login
-POST http://localhost/apisirs6v2/login
+POST http://localhost:5001/apisirs6v2/login
 Content-Type: application/json
 
 {
-    "userName": "kotakelektronik@gmail.com",
+    "userName": "Masuk",
     "password": "12345"
 }
 
@@ -116,7 +116,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtYSI6I
 ### RL 3.2 DELETE
 DELETE http://localhost/apisirs6v2/rltigatitikdua/40
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywibmFtYSI6IlJTIFVtdW0gRGFlcmFoIERyLiBILiBZdWxpZGluIEF3YXkiLCJlbWFpbCI6IjExMDMwMTAiLCJyc0lkIjoiMTEwMzAxMCIsImplbmlzVXNlcklkIjo0LCJpYXQiOjE3MDE1OTAwODgsImV4cCI6MTcwMTU5MDk4OH0.7v2PYWAAlqzCJowB5Fs1tyfplz9OVWWYkXYq7JX_Jt0
-
+ 
 ### RL 5.3 READ
 GET http://localhost/apisirs6v2/rllimatitiktiga?rsId=3174063&periode=2024-1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtYSI6IkR3aSBQIiwiZW1haWwiOiJrb3Rha2VsZWt0cm9uaWtAZ21haWwuY29tIiwic2F0S2VySWQiOiIzMTc0MDYzIiwiamVuaXNVc2VySWQiOjQsImlhdCI6MTcwNDk1MzkyMywiZXhwIjoxNzA0OTU0ODIzfQ.5RTHVP46kpK4iesu-nfVVqfM6gzMOTUmROPqUYvgH_8
