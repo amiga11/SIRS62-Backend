@@ -5,6 +5,9 @@ import { getUser, showUser, insertUser, login, logout, changePassword } from '..
 import { verifyToken } from '../middleware/VerifyToken.js'
 import { refreshToken } from '../controllers/RefreshTokenController.js'
 
+// Absensi
+import { getAbsensi } from '../controllers/AbsensiController.js'
+
 //Punya Bibo Ganteng
 
 import { getDataJenisPengunjung} from '../controllers/JenisPengunjungRLTigaTitikEmpatController.js'
@@ -246,6 +249,9 @@ const router = express.Router()
 router.post('/apisirs6v2/login', login)
 router.delete('/apisirs6v2/logout', logout)
 router.get('/apisirs6v2/token', refreshToken)
+
+// Absensi
+router.get('/apisirs6v2/absensi', verifyToken, getAbsensi)
 
 // User
 router.get('/apisirs/users', verifyToken, getUser)
