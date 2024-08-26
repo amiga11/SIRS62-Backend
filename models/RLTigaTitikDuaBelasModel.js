@@ -9,7 +9,7 @@ export const rlTigaTitikDuaBelasHeader = databaseSIRS.define(
       type: DataTypes.STRING,
     },
     periode: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.DATE,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -24,7 +24,7 @@ export const rlTigaTitikDuaBelasDetail = databaseSIRS.define(
       type: DataTypes.STRING,
     },
     periode: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.DATE,
     },
     rl_tiga_titik_dua_belas_id: {
       type: DataTypes.INTEGER,
@@ -89,7 +89,10 @@ export const get = (req, callback) => {
 
   if (periode != null) {
     const customDate = new Date(periode);
-    filter.push("rl_tiga_titik_dua_belas_detail.periode = ?");
+    // filter.push("rl_tiga_titik_dua_belas_detail.periode = ?");
+    filter.push(
+      "YEAR(rl_tiga_titik_dua_belas_detail.periode) = ? AND MONTH(rl_tiga_titik_dua_belas_detail.periode) = ? "
+    );
     sqlFilterValue.push(customDate.getFullYear());
     sqlFilterValue.push(customDate.getMonth() + 1);
   }

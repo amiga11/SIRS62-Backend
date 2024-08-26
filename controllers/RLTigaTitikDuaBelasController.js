@@ -7,10 +7,12 @@ import {
 } from "../models/RLTigaTitikDuaBelasModel.js";
 import { SpesialisasiRLTigaTitikDuaBelas } from "../models/RLTigaTitikDuaBelasSpesialisasiModel.js";
 import Joi from "joi";
+import joiDate from "@joi/date";
 
 export const insertDataRLTigaTitikDuaBelas = async (req, res) => {
   const schema = Joi.object({
-    tahun: Joi.number().required(),
+    periodeBulan: Joi.number().greater(0).less(13).required(),
+    periodeTahun: Joi.number().greater(2023).required(),
     data: Joi.array()
       .items(
         Joi.object()
@@ -36,13 +38,21 @@ export const insertDataRLTigaTitikDuaBelas = async (req, res) => {
     return;
   }
 
+  const periodeBulan = String(req.body.periodeBulan);
+  const periodeTahun = String(req.body.periodeTahun);
+  const periode = periodeTahun
+    .concat("-")
+    .concat(periodeBulan)
+    .concat("-")
+    .concat("1");
+
   let transaction;
   try {
     transaction = await databaseSIRS.transaction();
     const resultInsertHeader = await rlTigaTitikDuaBelasHeader.create(
       {
         rs_id: req.user.satKerId,
-        periode: req.body.tahun,
+        periode: periode,
         user_id: req.user.id,
       },
       {
@@ -54,7 +64,7 @@ export const insertDataRLTigaTitikDuaBelas = async (req, res) => {
       let totalall = value.Khusus + value.Besar + value.Sedang + value.Kecil;
       return {
         rs_id: req.user.satKerId,
-        periode: req.body.tahun,
+        periode: periode,
         rl_tiga_titik_dua_belas_id: resultInsertHeader.id,
         rl_tiga_titik_dua_belas_spesialisasi_id: value.SpesialisasiId,
         khusus: value.Khusus,
@@ -89,6 +99,11 @@ export const insertDataRLTigaTitikDuaBelas = async (req, res) => {
           status: false,
           message: "Gagal Input Data, Spesialisasi Salah.",
         });
+      } else if (error.name == "SequelizeUniqueConstraintError") {
+        res.status(400).send({
+          status: false,
+          message: "Duplicate Data Periode.",
+        });
       } else {
         res.status(400).send({
           status: false,
@@ -103,9 +118,11 @@ export const insertDataRLTigaTitikDuaBelas = async (req, res) => {
 };
 
 export const getRLTigaTitikDuaBelas = (req, res) => {
+  const joi = Joi.extend(joiDate);
   const schema = Joi.object({
     rsId: Joi.string().required(),
-    periode: Joi.number().required(),
+    periode: joi.date().format("YYYY-M").required(),
+    // periode: Joi.number().required(),
     page: Joi.number(),
     limit: Joi.number(),
   });
@@ -298,7 +315,6 @@ export const deleteDataRLTigaTitikDuaBelas = async (req, res) => {
       },
     });
     if (count != 0) {
-      console.log("atas");
       await transaction.commit();
       res.status(201).send({
         status: true,

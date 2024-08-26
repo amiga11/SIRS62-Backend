@@ -3,7 +3,7 @@ POST http://localhost:5001/apisirs6v2/login
 Content-Type: application/json
 
 {
-    "userName": "kotakelektronik@gmail.com",
+    "userName": "duren",
     "password": "12345"
 }
 
@@ -11,49 +11,45 @@ Content-Type: application/json
 GET http://localhost:5001/apisirs6v2/token
 
 ### Logut
-DELETE http://localhost:5001/apisirs6v2/logout
-
-### Absensi
-GET http://localhost/apisirs6v2/absensi?provinsiId=11
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtYSI6IkR3aSBQIiwiZW1haWwiOiJrb3Rha2VsZWt0cm9uaWtAZ21haWwuY29tIiwic2F0S2VySWQiOiIzMTc0MDYzIiwiamVuaXNVc2VySWQiOjQsImlhdCI6MTcyNDU3MjQ5NywiZXhwIjoxNzI0NTcyNTU3fQ.YUiGmCc1EYmWWXx5hCMvNDpUKByaXUXofyzTGrlQ4wE
+DELETE http://localhost/apisirs6v2/logout
 
 ### Get Specific User
-GET http://localhost:5001/apisirs6v2/users/1
+GET http://localhost/apisirs6v2/users/1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtYSI6IkR3aSBQIiwiZW1haWwiOiJrb3Rha2VsZWt0cm9uaWtAZ21haWwuY29tIiwicnNJZCI6IjExMDIwMTYiLCJqZW5pc1VzZXJJZCI6NCwiaWF0IjoxNzAyMTA5NTE0LCJleHAiOjE3MDIxMTA0MTR9.vVMvTqOLLgdtrH4KtgxTqJqKQmYKwFgEPxjGFbSnlIs
 
 ### Get Rumah Sakit
-GET http://localhost:5001/apisirs6v2/rumahsakit?kabKotaId=3174
+GET http://localhost/apisirs6v2/rumahsakit?kabKotaId=3174
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtYSI6IkR3aSBQIiwiZW1haWwiOiJrb3Rha2VsZWt0cm9uaWtAZ21haWwuY29tIiwicnNJZCI6IjExMDIwMTYiLCJqZW5pc1VzZXJJZCI6NCwiaWF0IjoxNzAyODI0Mjc0LCJleHAiOjE3MDI4MjUxNzR9.BOwO-NeUO0TYojCzCSesnVy1vtnnKdRYrkFGft2i_-o
 
 ### Get Specific Rumah Sakit
-GET http://localhost:5001/apisirs6v2/rumahsakit/3101002,3174063
+GET http://localhost/apisirs6v2/rumahsakit/3101002,3174063
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtYSI6IkR3aSBQIiwiZW1haWwiOiJrb3Rha2VsZWt0cm9uaWtAZ21haWwuY29tIiwic2F0S2VySWQiOiIzMTc0MDYzIiwiamVuaXNVc2VySWQiOjQsImlhdCI6MTcwNDU4MjE3NywiZXhwIjoxNzA0NTgzMDc3fQ.vT7ixHmYSwtEQAbBoboAVRJkXYt9Hwr8323ksZH-SK0
 
 ### RL 3.2 Jenis Pelayanan
-GET http://localhost:5001/apisirs6v2/rltigatitikduajenispelayanan
+GET http://localhost/apisirs6v2/rltigatitikduajenispelayanan
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtYSI6IkR3aSBQIiwiZW1haWwiOiJrb3Rha2VsZWt0cm9uaWtAZ21haWwuY29tIiwic2F0S2VySWQiOiIzMTc0MDYzIiwiamVuaXNVc2VySWQiOjQsImlhdCI6MTcwNDY4NDYwOSwiZXhwIjoxNzA0Njg1NTA5fQ.sZTmY0rBAtfsPeCqJCt26sR46uqYHVHzpGYXXA9DxJQ
 
 ### Provinsi
-GET http://localhost:5001/apisirs6v2/provinsi/11
+GET http://localhost/apisirs6v2/provinsi/11
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtYSI6IkR3aSBQIiwiZW1haWwiOiJrb3Rha2VsZWt0cm9uaWtAZ21haWwuY29tIiwic2F0S2VySWQiOiIzMTc0MDYzIiwiamVuaXNVc2VySWQiOjQsImlhdCI6MTcwNDg2NTQ3NSwiZXhwIjoxNzA0ODY2Mzc1fQ.N0sxzh3CXUg2Gyoaeb1vikhZOsKq6NNwItYlQEthi8s
 ### KabKota
-GET http://localhost:5001/apisirs6v2/kabkota
+GET http://localhost/apisirs6v2/kabkota
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtYSI6IkR3aSBQIiwiZW1haWwiOiJrb3Rha2VsZWt0cm9uaWtAZ21haWwuY29tIiwicnNJZCI6IjExMDIwMTYiLCJqZW5pc1VzZXJJZCI6NCwiaWF0IjoxNzAyODIzMDY5LCJleHAiOjE3MDI4MjM5Njl9.LPh06lUY_nt_N4ERK3CcZmE65PPhUmTIqbbulC-ZPQ8
 
 ### RL 3.1 Read
-GET http://localhost:5001/apisirs6v2/rltigatitiksatu?rsId=3174063&periode=2023-01
+GET http://localhost/apisirs6v2/rltigatitiksatu?rsId=3174063&periode=2023-01
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtYSI6IkR3aSBQIiwiZW1haWwiOiJrb3Rha2VsZWt0cm9uaWtAZ21haWwuY29tIiwic2F0S2VySWQiOiIzMTc0MDYzIiwiamVuaXNVc2VySWQiOjQsImlhdCI6MTcwNTExNDg5NiwiZXhwIjoxNzA1MTE1Nzk2fQ.FNM5VoT2kPbwofJyPlVqgRT-g84OpQ1D7EzEsz9SLEg
 
 ### RL 3.2 Read
-GET http://localhost:5001/apisirs6v2/rltigatitikdua?rsId=3174063&periode=2023-01
+GET http://localhost/apisirs6v2/rltigatitikdua?rsId=3174063&periode=2023-01
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtYSI6IkR3aSBQIiwiZW1haWwiOiJrb3Rha2VsZWt0cm9uaWtAZ21haWwuY29tIiwic2F0S2VySWQiOiIzMTc0MDYzIiwiamVuaXNVc2VySWQiOjQsImlhdCI6MTcwNDY4Njg5NCwiZXhwIjoxNzA0Njg3Nzk0fQ.f74rJMfoudnmpKj8vjQGl7ewwW4w_kl9uSn93Q8Ujj4
 
 ### RL 3.2 Specific Read
-GET http://localhost:5001/apisirs6v2/rltigatitikdua/55
+GET http://localhost/apisirs6v2/rltigatitikdua/55
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtYSI6IkR3aSBQIiwiZW1haWwiOiJrb3Rha2VsZWt0cm9uaWtAZ21haWwuY29tIiwic2F0S2VySWQiOiIzMTc0MDYzIiwiamVuaXNVc2VySWQiOjQsImlhdCI6MTcwNDY5NTE4MiwiZXhwIjoxNzA0Njk2MDgyfQ.RmWk5-C7IFDx0ZTV6Tvu0uQWchBRlBtsp4ZjguLQHRY
 
 ### RL 3.2 CREATE
-POST http://localhost:5001/apisirs6v2/rltigatitikdua
+POST http://localhost/apisirs6v2/rltigatitikdua
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtYSI6IkR3aSBQIiwiZW1haWwiOiJrb3Rha2VsZWt0cm9uaWtAZ21haWwuY29tIiwic2F0S2VySWQiOiIzMTc0MDYzIiwiamVuaXNVc2VySWQiOjQsImlhdCI6MTcwNTMwMjA2NCwiZXhwIjoxNzA1MzAyOTY0fQ.97N3OkkZJpjD6MtY-Gil1HUx-seqOzrlM6yZ25SY2Rw
 
@@ -97,7 +93,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtYSI6I
 }
 
 ### RL. 3.2 UPDATE
-PATCH http://localhost:5001/apisirs6v2/rltigatitikdua/101
+PATCH http://localhost/apisirs6v2/rltigatitikdua/101
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtYSI6IkR3aSBQIiwiZW1haWwiOiJrb3Rha2VsZWt0cm9uaWtAZ21haWwuY29tIiwic2F0S2VySWQiOiIzMTc0MDYzIiwiamVuaXNVc2VySWQiOjQsImlhdCI6MTcwNTMwNDUyNSwiZXhwIjoxNzA1MzA1NDI1fQ.WEv5fGy0WTezCJcra_JfMAPXJLMDwzSevHHLi4vEt9E
 
@@ -118,15 +114,96 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtYSI6I
 }
 
 ### RL 3.2 DELETE
-DELETE http://localhost:5001/apisirs6v2/rltigatitikdua/40
+DELETE http://localhost/apisirs6v2/rltigatitikdua/40
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywibmFtYSI6IlJTIFVtdW0gRGFlcmFoIERyLiBILiBZdWxpZGluIEF3YXkiLCJlbWFpbCI6IjExMDMwMTAiLCJyc0lkIjoiMTEwMzAxMCIsImplbmlzVXNlcklkIjo0LCJpYXQiOjE3MDE1OTAwODgsImV4cCI6MTcwMTU5MDk4OH0.7v2PYWAAlqzCJowB5Fs1tyfplz9OVWWYkXYq7JX_Jt0
 
 ### RL 5.3 READ
-GET http://localhost:5001/apisirs6v2/rllimatitiktiga?rsId=3174063&periode=2024-1
+GET http://localhost/apisirs6v2/rllimatitiktiga?rsId=3174063&periode=2024-1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtYSI6IkR3aSBQIiwiZW1haWwiOiJrb3Rha2VsZWt0cm9uaWtAZ21haWwuY29tIiwic2F0S2VySWQiOiIzMTc0MDYzIiwiamVuaXNVc2VySWQiOjQsImlhdCI6MTcwNDk1MzkyMywiZXhwIjoxNzA0OTU0ODIzfQ.5RTHVP46kpK4iesu-nfVVqfM6gzMOTUmROPqUYvgH_8
 
 
 
 ### 
-http://localhost:5001/apisirs6v2/rltigatitiklimabelas?tahun=2024
+http://localhost/apisirs6v2/rltigatitiklimabelas?tahun=2024
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtYSI6IkR3aSBQIiwiZW1haWwiOiJrb3Rha2VsZWt0cm9uaWtAZ21haWwuY29tIiwic2F0S2VySWQiOiIzMTc0MDYzIiwiamVuaXNVc2VySWQiOjQsImlhdCI6MTcwNDk1MzkyMywiZXhwIjoxNzA0OTU0ODIzfQ.5RTHVP46kpK4iesu-nfVVqfM6gzMOTUmROPqUYvgH_8
+
+
+
+### RL 3.12 CREATE
+POST http://localhost:5001/apisirs6v2/rltigatitikduabelas
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwibmFtYSI6IlJTVUQgRHVyZW4gU2F3aXQiLCJlbWFpbCI6ImR1cmVuIiwic2F0S2VySWQiOiIzMTcyNzQ2IiwiamVuaXNVc2VySWQiOjQsImlhdCI6MTcyNDE0MDE1NSwiZXhwIjoxNzI0MTQwMjE1fQ.fr_-XIbOtI7DrgDjAE3IywVVdyo3UkHtRVScbnFt0Yw
+
+{
+    "periodeTahun": 2024,
+    "periodeBulan": 2,
+    "data":[
+        {
+            "SpesialisasiId": 88,
+            "Khusus": 0,
+            "Besar": 0,
+            "Sedang": 0,
+            "Kecil": 0
+        }
+    ]
+}
+
+### RL 3.12 GET DATA
+GET http://localhost:5001/apisirs6v2/rltigatitikduabelas?rsId=3172746&periode=2024-05
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwibmFtYSI6IlJTVUQgRHVyZW4gU2F3aXQiLCJlbWFpbCI6ImR1cmVuIiwic2F0S2VySWQiOiIzMTcyNzQ2IiwiamVuaXNVc2VySWQiOjQsImlhdCI6MTcyNDIwNzI1NCwiZXhwIjoxNzI0MjA3MzE0fQ.IERTVyIRhh_lYTwEoJJSxhqQF3X-2Yskn9cdAcDYBcg
+
+
+
+### RL 3.16 GET DATA ICD
+GET http://localhost:5001/apisirs6v2/rltigatitikenambelasjenispelayanankeluargaberencana
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwibmFtYSI6IlJTVUQgRHVyZW4gU2F3aXQiLCJlbWFpbCI6ImR1cmVuIiwic2F0S2VySWQiOiIzMTcyNzQ2IiwiamVuaXNVc2VySWQiOjQsImlhdCI6MTcyNDM4NDEyMywiZXhwIjoxNzI0Mzg0MTgzfQ.KfYcNNLigixHOFmNsdM-8DtOLbgQZ6WPNBv-4C_sCaE
+
+
+### RL 3.16 POST
+POST http://localhost:5001/apisirs6v2/rltigatitikenambelas
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwibmFtYSI6IlJTVUQgRHVyZW4gU2F3aXQiLCJlbWFpbCI6ImR1cmVuIiwic2F0S2VySWQiOiIzMTcyNzQ2IiwiamVuaXNVc2VySWQiOjQsImlhdCI6MTcyNDM4MzgzNSwiZXhwIjoxNzI0MzgzODk1fQ.TeUUeUY17t91iIdrZHoslnKUBYC4iSMWGVhWW4WFnnU
+
+{
+    "tahun" : 2024,
+    "data": [
+        {
+            "JenisPelayananKeluargaBerencanaId" : 99,
+            "pelayananKbPaskaPersalinan" : 0
+
+        }
+    ]
+}
+
+
+### RL. 3.2 UPDATE
+PATCH http://localhost:5001/apisirs6v2/rltigatitikenambelas/101
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtYSI6IkR3aSBQIiwiZW1haWwiOiJrb3Rha2VsZWt0cm9uaWtAZ21haWwuY29tIiwic2F0S2VySWQiOiIzMTc0MDYzIiwiamVuaXNVc2VySWQiOjQsImlhdCI6MTcwNTMwNDUyNSwiZXhwIjoxNzA1MzA1NDI1fQ.WEv5fGy0WTezCJcra_JfMAPXJLMDwzSevHHLi4vEt9E
+
+{
+    "pasienAwalBulan": 10,
+    "pasienMasuk": 20,
+    "pasienKeluarHidup": 4,
+    "pasienKeluarMatiKurangDari48Jam": 4,
+    "pasienKeluarMatiLebihDariAtauSamaDengan48Jam":5,
+    "jumlahLamaDirawat": 5,
+    "rincianHariPerawatanKelasVVIP": 8,
+    "rincianHariPerawatanKelasVIP": 9,
+    "rincianHariPerawatanKelas1": 10,
+    "rincianHariPerawatanKelas2": 11,
+    "rincianHariPerawatanKelas3": 12,
+    "rincianHariPerawatanKelasKhusus": 13,
+    "jumlahAlokasiTempatTidurAwalBulan": 11
+}
+
+### RL 3.16 GET DATA
+GET http://localhost:5001/apisirs6v2/rltigatitikenambelas/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwibmFtYSI6IlJTVUQgRHVyZW4gU2F3aXQiLCJlbWFpbCI6ImR1cmVuIiwic2F0S2VySWQiOiIzMTcyNzQ2IiwiamVuaXNVc2VySWQiOjQsImlhdCI6MTcyNDYzNzIyNSwiZXhwIjoxNzI0NjM3Mjg1fQ.gVPEMM4lkcaa-KEVKEK5J_y_clhFN9Wc0FNKqN2qxW4
+
+
+### RL 3.16 DELETE
+DELETE http://localhost:5001/apisirs6v2/rltigatitikenambelas/40
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwibmFtYSI6IlJTVUQgRHVyZW4gU2F3aXQiLCJlbWFpbCI6ImR1cmVuIiwic2F0S2VySWQiOiIzMTcyNzQ2IiwiamVuaXNVc2VySWQiOjQsImlhdCI6MTcyNDYzNjM3NiwiZXhwIjoxNzI0NjM2NDM2fQ.I3-yRMTSXsbkzi-C1jT1qEkZBdOABGngV9DGivs36cw
