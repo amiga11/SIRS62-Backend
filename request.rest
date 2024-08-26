@@ -13,6 +13,10 @@ GET http://localhost/apisirs6v2/token
 ### Logut
 DELETE http://localhost/apisirs6v2/logout
 
+### Absensi
+GET http://localhost/apisirs6v2/absensi?provinsiId=11
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtYSI6IkR3aSBQIiwiZW1haWwiOiJrb3Rha2VsZWt0cm9uaWtAZ21haWwuY29tIiwic2F0S2VySWQiOiIzMTc0MDYzIiwiamVuaXNVc2VySWQiOjQsImlhdCI6MTcyNDU3MjQ5NywiZXhwIjoxNzI0NTcyNTU3fQ.YUiGmCc1EYmWWXx5hCMvNDpUKByaXUXofyzTGrlQ4wE
+
 ### Get Specific User
 GET http://localhost/apisirs6v2/users/1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtYSI6IkR3aSBQIiwiZW1haWwiOiJrb3Rha2VsZWt0cm9uaWtAZ21haWwuY29tIiwicnNJZCI6IjExMDIwMTYiLCJqZW5pc1VzZXJJZCI6NCwiaWF0IjoxNzAyMTA5NTE0LCJleHAiOjE3MDIxMTA0MTR9.vVMvTqOLLgdtrH4KtgxTqJqKQmYKwFgEPxjGFbSnlIs
