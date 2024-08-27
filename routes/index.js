@@ -155,7 +155,7 @@ import { getDataJenisKegiatanTigaTitikSembilan } from "../controllers/RLTigaTiti
 import { getDataJenisKegiatanTigaTitikLimaBelas } from "../controllers/JenisKegiatanTigaTitikLimaBelasController.js";
 
 // RL 3.16 Metoda
-import { getDataMetodaRLTigaTitikEnamBelas } from "../controllers/RLTigaTitikEnamBelasMetodaController.js";
+import { getDataJenisPelayananKeluargaBerencana } from "../controllers/RLTigaTitikEnamBelasMetodaController.js";
 
 // RL 3.9 baru
 import {
@@ -717,7 +717,7 @@ router.patch(
 router.get(
   "/apisirs6v2/rltigatitikenambelasjenispelayanankeluargaberencana",
   verifyToken,
-  getDataMetodaRLTigaTitikEnamBelas
+  getDataJenisPelayananKeluargaBerencana
 );
 
 router.post(
