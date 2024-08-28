@@ -5,7 +5,57 @@ export const get = (req, callback) => {
     const sqlSelect = 'SELECT ' +
         'rs_id, ' +
         'nama_rs, ' +
-        'rl_32, ' +
+       
+        'rl_32_bulan_1, ' +
+        'rl_32_bulan_2, ' +
+        'rl_32_bulan_3, ' +
+        'rl_32_bulan_4, ' +
+        'rl_32_bulan_5, ' +
+        'rl_32_bulan_6, ' +
+        'rl_32_bulan_7, ' +
+        'rl_32_bulan_8, ' +
+        'rl_32_bulan_9, ' +
+        'rl_32_bulan_10, ' +
+        'rl_32_bulan_11, ' +
+        'rl_32_bulan_12, '  +
+        'rl_37_bulan_1, ' +
+        'rl_37_bulan_2, ' +
+        'rl_37_bulan_3, ' +
+        'rl_37_bulan_4, ' +
+        'rl_37_bulan_5, ' +
+        'rl_37_bulan_6, ' +
+        'rl_37_bulan_7, ' +
+        'rl_37_bulan_8, ' +
+        'rl_37_bulan_9, ' +
+        'rl_37_bulan_10, ' +
+        'rl_37_bulan_11, ' +
+        'rl_37_bulan_12, '  +
+        'rl_39_bulan_1, ' +
+        'rl_39_bulan_2, ' +
+        'rl_39_bulan_3, ' +
+        'rl_39_bulan_4, ' +
+        'rl_39_bulan_5, ' +
+        'rl_39_bulan_6, ' +
+        'rl_39_bulan_7, ' +
+        'rl_39_bulan_8, ' +
+        'rl_39_bulan_9, ' +
+        'rl_39_bulan_10, ' +
+        'rl_39_bulan_11, ' +
+        'rl_39_bulan_12, '  +
+        'rl_317, ' +
+        'rl_318, ' +
+        'rl_52_bulan_1, ' +
+        'rl_52_bulan_2, ' +
+        'rl_52_bulan_3, ' +
+        'rl_52_bulan_4, ' +
+        'rl_52_bulan_5, ' +
+        'rl_52_bulan_6, ' +
+        'rl_52_bulan_7, ' +
+        'rl_52_bulan_8, ' +
+        'rl_52_bulan_9, ' +
+        'rl_52_bulan_10, ' +
+        'rl_52_bulan_11, ' +
+        'rl_52_bulan_12, '  +
         'rl_53_bulan_1, ' +
         'rl_53_bulan_2, ' +
         'rl_53_bulan_3, ' +
