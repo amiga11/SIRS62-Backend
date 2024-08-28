@@ -94,7 +94,7 @@ import {
 } from "../controllers/ICDController.js";
 
 //Jenis Pemeriksaan RL 3.8
-import { getDataPemeriksaanRlTigaTitikDelapan } from "../controllers/RLTigaTitikDelapanPemeriksaanController.js";
+import { getDataPemeriksaanRlTigaTitikDelapan,getDataPemeriksaanDetailRlTigaTitikDelapan } from "../controllers/RLTigaTitikDelapanPemeriksaanController.js";
 
 //Jenis Kegiatan RL 3.14
 import { getDataJenisKegiatanRLTigaTitikEmpatBelas } from "../controllers/RLTigaTitikEmpatBelasJenisKegiatanController.js";
@@ -358,6 +358,12 @@ router.get(
   verifyToken,
   getDataPemeriksaanRlTigaTitikDelapan
 );
+router.get(
+  "/apisirs6v2/rltigatitikdelapanpemeriksaandetail",
+  verifyToken,
+  getDataPemeriksaanDetailRlTigaTitikDelapan
+);
+
 
 // Jenis Kegiatan RL 3.9
 router.get(
