@@ -94,7 +94,7 @@ import {
 } from "../controllers/ICDController.js";
 
 //Jenis Pemeriksaan RL 3.8
-import { getDataPemeriksaanRlTigaTitikDelapan } from "../controllers/RLTigaTitikDelapanPemeriksaanController.js";
+import { getDataPemeriksaanRlTigaTitikDelapan,getDataPemeriksaanDetailRlTigaTitikDelapan } from "../controllers/RLTigaTitikDelapanPemeriksaanController.js";
 
 //Jenis Kegiatan RL 3.14
 import { getDataJenisKegiatanRLTigaTitikEmpatBelas } from "../controllers/RLTigaTitikEmpatBelasJenisKegiatanController.js";
@@ -155,7 +155,7 @@ import { getDataJenisKegiatanTigaTitikSembilan } from "../controllers/RLTigaTiti
 import { getDataJenisKegiatanTigaTitikLimaBelas } from "../controllers/JenisKegiatanTigaTitikLimaBelasController.js";
 
 // RL 3.16 Metoda
-import { getDataMetodaRLTigaTitikEnamBelas } from "../controllers/RLTigaTitikEnamBelasMetodaController.js";
+import { getDataJenisPelayananKeluargaBerencana } from "../controllers/RLTigaTitikEnamBelasMetodaController.js";
 
 // RL 3.9 baru
 import {
@@ -358,6 +358,12 @@ router.get(
   verifyToken,
   getDataPemeriksaanRlTigaTitikDelapan
 );
+router.get(
+  "/apisirs6v2/rltigatitikdelapanpemeriksaandetail",
+  verifyToken,
+  getDataPemeriksaanDetailRlTigaTitikDelapan
+);
+
 
 // Jenis Kegiatan RL 3.9
 router.get(
@@ -717,7 +723,7 @@ router.patch(
 router.get(
   "/apisirs6v2/rltigatitikenambelasjenispelayanankeluargaberencana",
   verifyToken,
-  getDataMetodaRLTigaTitikEnamBelas
+  getDataJenisPelayananKeluargaBerencana
 );
 
 router.post(

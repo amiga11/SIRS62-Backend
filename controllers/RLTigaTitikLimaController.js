@@ -4,19 +4,15 @@ import Joi from 'joi'
 
 export const getDataRLTigaTitikLima = (req, res) => {
     console.log(req.user)
-    rlTigaTitikLimaHeader.findAll({
-        attributes: ['id','tahun'],
+    rlTigaTitikLimaDetail.findAll({
         where:{
             rs_id: req.query.rsId,
             tahun: req.query.tahun
         },
         include:{
-            model: rlTigaTitikLimaDetail,
-            include: {
-                model: jenisKegiatan
-            }
+            model: jenisKegiatan,
         },
-        order: [[{ model: rlTigaTitikLimaDetail }, 'jenis_kegiatan_id', 'ASC']]
+        order: [['jenis_kegiatan_id', 'ASC']]
     })
     .then((results) => {
         res.status(200).send({

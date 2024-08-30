@@ -3,6 +3,7 @@ import { databaseSIRS } from "../config/Database.js";
 
 export const get = (req, callback) => { 
   const sqlSelect = 'SELECT  '+
+  'rl_empat_titik_satu_detail.rs_id, '+
   'icd.icd_code_group, '+
   'icd.description_code_group, '+
   'SUM(rl_empat_titik_satu_detail.jmlh_pas_hidup_mati_gen_l) as jmlh_pas_hidup_mati_laki,  '+
