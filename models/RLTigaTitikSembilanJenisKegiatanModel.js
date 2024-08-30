@@ -35,4 +35,4 @@ export const jenisGroupKegiatanHeader = databaseSIRS.define('rl_tiga_titik_sembi
 })
 
 jenisGroupKegiatanHeader.hasMany(jenisKegiatan, {foreignKey: 'id'})
-jenisKegiatan.belongsTo(jenisGroupKegiatanHeader, {foreignKey: 'group_jenis_kegiatan_rl_tiga_titik_sembilan_id'})
+jenisKegiatan.belongsTo(jenisGroupKegiatanHeader, {foreignKey: 'rl_tiga_titik_sembilan_group_jenis_kegiatan_id'})

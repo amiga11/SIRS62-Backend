@@ -5,7 +5,18 @@ export const get = (req, callback) => {
     const sqlSelect = 'SELECT ' +
         'rs_id, ' +
         'nama_rs, ' +
-       
+        'rl_31_bulan_1, ' +
+        'rl_31_bulan_2, ' +
+        'rl_31_bulan_3, ' +
+        'rl_31_bulan_4, ' +
+        'rl_31_bulan_5, ' +
+        'rl_31_bulan_6, ' +
+        'rl_31_bulan_7, ' +
+        'rl_31_bulan_8, ' +
+        'rl_31_bulan_9, ' +
+        'rl_31_bulan_10, ' +
+        'rl_31_bulan_11, ' +
+        'rl_31_bulan_12, '  +
         'rl_32_bulan_1, ' +
         'rl_32_bulan_2, ' +
         'rl_32_bulan_3, ' +
@@ -18,6 +29,54 @@ export const get = (req, callback) => {
         'rl_32_bulan_10, ' +
         'rl_32_bulan_11, ' +
         'rl_32_bulan_12, '  +
+        'rl_33_bulan_1, ' +
+        'rl_33_bulan_2, ' +
+        'rl_33_bulan_3, ' +
+        'rl_33_bulan_4, ' +
+        'rl_33_bulan_5, ' +
+        'rl_33_bulan_6, ' +
+        'rl_33_bulan_7, ' +
+        'rl_33_bulan_8, ' +
+        'rl_33_bulan_9, ' +
+        'rl_33_bulan_10, ' +
+        'rl_33_bulan_11, ' +
+        'rl_33_bulan_12, '  +
+        'rl_34_bulan_1, ' +
+        'rl_34_bulan_2, ' +
+        'rl_34_bulan_3, ' +
+        'rl_34_bulan_4, ' +
+        'rl_34_bulan_5, ' +
+        'rl_34_bulan_6, ' +
+        'rl_34_bulan_7, ' +
+        'rl_34_bulan_8, ' +
+        'rl_34_bulan_9, ' +
+        'rl_34_bulan_10, ' +
+        'rl_34_bulan_11, ' +
+        'rl_34_bulan_12, '  +
+        'rl_35_bulan_1, ' +
+        'rl_35_bulan_2, ' +
+        'rl_35_bulan_3, ' +
+        'rl_35_bulan_4, ' +
+        'rl_35_bulan_5, ' +
+        'rl_35_bulan_6, ' +
+        'rl_35_bulan_7, ' +
+        'rl_35_bulan_8, ' +
+        'rl_35_bulan_9, ' +
+        'rl_35_bulan_10, ' +
+        'rl_35_bulan_11, ' +
+        'rl_35_bulan_12, '  +
+        'rl_36_bulan_1, ' +
+        'rl_36_bulan_2, ' +
+        'rl_36_bulan_3, ' +
+        'rl_36_bulan_4, ' +
+        'rl_36_bulan_5, ' +
+        'rl_36_bulan_6, ' +
+        'rl_36_bulan_7, ' +
+        'rl_36_bulan_8, ' +
+        'rl_36_bulan_9, ' +
+        'rl_36_bulan_10, ' +
+        'rl_36_bulan_11, ' +
+        'rl_36_bulan_12, '  +
         'rl_37_bulan_1, ' +
         'rl_37_bulan_2, ' +
         'rl_37_bulan_3, ' +
@@ -30,6 +89,18 @@ export const get = (req, callback) => {
         'rl_37_bulan_10, ' +
         'rl_37_bulan_11, ' +
         'rl_37_bulan_12, '  +
+        'rl_38_bulan_1, ' +
+        'rl_38_bulan_2, ' +
+        'rl_38_bulan_3, ' +
+        'rl_38_bulan_4, ' +
+        'rl_38_bulan_5, ' +
+        'rl_38_bulan_6, ' +
+        'rl_38_bulan_7, ' +
+        'rl_38_bulan_8, ' +
+        'rl_38_bulan_9, ' +
+        'rl_38_bulan_10, ' +
+        'rl_38_bulan_11, ' +
+        'rl_38_bulan_12, '  +
         'rl_39_bulan_1, ' +
         'rl_39_bulan_2, ' +
         'rl_39_bulan_3, ' +
@@ -42,8 +113,75 @@ export const get = (req, callback) => {
         'rl_39_bulan_10, ' +
         'rl_39_bulan_11, ' +
         'rl_39_bulan_12, '  +
+        'rl_310_bulan_1, ' +
+        'rl_310_bulan_2, ' +
+        'rl_310_bulan_3, ' +
+        'rl_310_bulan_4, ' +
+        'rl_310_bulan_5, ' +
+        'rl_310_bulan_6, ' +
+        'rl_310_bulan_7, ' +
+        'rl_310_bulan_8, ' +
+        'rl_310_bulan_9, ' +
+        'rl_310_bulan_10, ' +
+        'rl_310_bulan_11, ' +
+        'rl_310_bulan_12, '  +
+        'rl_311, ' +
+        'rl_312, ' +
+        'rl_313, ' +
+        'rl_314, ' +
+        'rl_315, ' +
+        'rl_316, ' +
         'rl_317, ' +
         'rl_318, ' +
+        'rl_319, ' +
+        'rl_41_bulan_1, ' +
+        'rl_41_bulan_2, ' +
+        'rl_41_bulan_3, ' +
+        'rl_41_bulan_4, ' +
+        'rl_41_bulan_5, ' +
+        'rl_41_bulan_6, ' +
+        'rl_41_bulan_7, ' +
+        'rl_41_bulan_8, ' +
+        'rl_41_bulan_9, ' +
+        'rl_41_bulan_10, ' +
+        'rl_41_bulan_11, ' +
+        'rl_41_bulan_12, '  +
+        'rl_42_bulan_1, ' +
+        'rl_42_bulan_2, ' +
+        'rl_42_bulan_3, ' +
+        'rl_42_bulan_4, ' +
+        'rl_42_bulan_5, ' +
+        'rl_42_bulan_6, ' +
+        'rl_42_bulan_7, ' +
+        'rl_42_bulan_8, ' +
+        'rl_42_bulan_9, ' +
+        'rl_42_bulan_10, ' +
+        'rl_42_bulan_11, ' +
+        'rl_42_bulan_12, '  +
+        'rl_43_bulan_1, ' +
+        'rl_43_bulan_2, ' +
+        'rl_43_bulan_3, ' +
+        'rl_43_bulan_4, ' +
+        'rl_43_bulan_5, ' +
+        'rl_43_bulan_6, ' +
+        'rl_43_bulan_7, ' +
+        'rl_43_bulan_8, ' +
+        'rl_43_bulan_9, ' +
+        'rl_43_bulan_10, ' +
+        'rl_43_bulan_11, ' +
+        'rl_43_bulan_12, '  +
+        'rl_51_bulan_1, ' +
+        'rl_51_bulan_2, ' +
+        'rl_51_bulan_3, ' +
+        'rl_51_bulan_4, ' +
+        'rl_51_bulan_5, ' +
+        'rl_51_bulan_6, ' +
+        'rl_51_bulan_7, ' +
+        'rl_51_bulan_8, ' +
+        'rl_51_bulan_9, ' +
+        'rl_51_bulan_10, ' +
+        'rl_51_bulan_11, ' +
+        'rl_51_bulan_12, '  +
         'rl_52_bulan_1, ' +
         'rl_52_bulan_2, ' +
         'rl_52_bulan_3, ' +

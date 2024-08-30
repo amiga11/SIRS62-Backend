@@ -53,7 +53,7 @@ export const rlTigaTitikSembilan = databaseSIRS.define(
         type: DataTypes.INTEGER,
         primaryKey: true
     },
-    group_jenis_kegiatan_rl_tiga_titik_sembilan_id: {
+    rl_tiga_titik_sembilan_group_jenis_kegiatan_id: {
         type: DataTypes.INTEGER,
     },
         nama: {
@@ -189,5 +189,5 @@ jenisKegiatan.hasMany(rlTigaTitikSembilanDetail, {foreignKey: 'id'})
 rlTigaTitikSembilanDetail.belongsTo(jenisKegiatan, {foreignKey: 'jenis_kegiatan_id'})
 
 jenisGroupKegiatanHeader.hasMany(jenisKegiatan, {foreignKey: 'id'})
-jenisKegiatan.belongsTo(jenisGroupKegiatanHeader, {foreignKey: 'group_jenis_kegiatan_rl_tiga_titik_sembilan_id'})
+jenisKegiatan.belongsTo(jenisGroupKegiatanHeader, {foreignKey: 'rl_tiga_titik_sembilan_group_jenis_kegiatan_id'})
 
