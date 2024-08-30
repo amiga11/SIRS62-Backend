@@ -10,7 +10,7 @@ export const get = (req, callback) => {
     
     const sqlFrom = 'FROM ' +
         'rl_tiga_titik_dua_jenis_pelayanan ' +
-        'INNER JOIN rl_tiga_titik_dua_kelompok_jenis_pelayanan ' +
+        'LEFT OUTER JOIN rl_tiga_titik_dua_kelompok_jenis_pelayanan ' +
         'ON rl_tiga_titik_dua_kelompok_jenis_pelayanan.id =  rl_tiga_titik_dua_jenis_pelayanan.rl_tiga_titik_dua_kelompok_jenis_pelayanan_id '
 
     const sqlWhere = 'WHERE '
