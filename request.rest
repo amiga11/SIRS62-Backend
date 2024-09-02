@@ -3,7 +3,11 @@ POST http://localhost:5001/apisirs6v2/login
 Content-Type: application/json
 
 {
+<<<<<<< HEAD
     "userName": "duren",
+=======
+    "userName": "Masuk",
+>>>>>>> branch_zulkifli
     "password": "12345"
 }
 
@@ -15,7 +19,7 @@ DELETE http://localhost/apisirs6v2/logout
 
 ### Get Specific User
 GET http://localhost/apisirs6v2/users/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtYSI6IkR3aSBQIiwiZW1haWwiOiJrb3Rha2VsZWt0cm9uaWtAZ21haWwuY29tIiwicnNJZCI6IjExMDIwMTYiLCJqZW5pc1VzZXJJZCI6NCwiaWF0IjoxNzAyMTA5NTE0LCJleHAiOjE3MDIxMTA0MTR9.vVMvTqOLLgdtrH4KtgxTqJqKQmYKwFgEPxjGFbSnlIs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjEsIm5hbWEiOiJSU1VEIFp1bGtpZmxpIiwiZW1haWwiOiJNYXN1ayIsInNhdEtlcklkIjoiNzQwMjAxMCIsImplbmlzVXNlcklkIjo0LCJpYXQiOjE3MjUyMTE2MDUsImV4cCI6MTcyNTIxMTY2NX0.7G6_0JgSl8Wn6Va-7gE9shPkY8jhQ1Pf9IJrPDSt9zg
 
 ### Get Rumah Sakit
 GET http://localhost/apisirs6v2/rumahsakit?kabKotaId=3174
@@ -116,7 +120,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtYSI6I
 ### RL 3.2 DELETE
 DELETE http://localhost/apisirs6v2/rltigatitikdua/40
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywibmFtYSI6IlJTIFVtdW0gRGFlcmFoIERyLiBILiBZdWxpZGluIEF3YXkiLCJlbWFpbCI6IjExMDMwMTAiLCJyc0lkIjoiMTEwMzAxMCIsImplbmlzVXNlcklkIjo0LCJpYXQiOjE3MDE1OTAwODgsImV4cCI6MTcwMTU5MDk4OH0.7v2PYWAAlqzCJowB5Fs1tyfplz9OVWWYkXYq7JX_Jt0
-
+ 
 ### RL 5.3 READ
 GET http://localhost/apisirs6v2/rllimatitiktiga?rsId=3174063&periode=2024-1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtYSI6IkR3aSBQIiwiZW1haWwiOiJrb3Rha2VsZWt0cm9uaWtAZ21haWwuY29tIiwic2F0S2VySWQiOiIzMTc0MDYzIiwiamVuaXNVc2VySWQiOjQsImlhdCI6MTcwNDk1MzkyMywiZXhwIjoxNzA0OTU0ODIzfQ.5RTHVP46kpK4iesu-nfVVqfM6gzMOTUmROPqUYvgH_8
