@@ -120,6 +120,12 @@ export const insertRLTigaTitikDua =  async (req, res) => {
         if (jumlahAlokasiTempatTidurAwalBulan <= 0) {
             errorJumlahAlokasiTempatTidurAwalBulan = true
         }
+
+        if (element.rlTigaTitikDuaJenisPelayananId == 100) {
+            errorPasienAkhirBulan = false
+            errorJumlahHariPerawatan = false
+            errorJumlahAlokasiTempatTidurAwalBulan = false
+        }
     })
 
     if (errorPasienAkhirBulan) {
