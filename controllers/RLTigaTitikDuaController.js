@@ -93,6 +93,8 @@ export const insertRLTigaTitikDua =  async (req, res) => {
     let errorPasienAkhirBulan = false
     let errorJumlahHariPerawatan = false
     let errorJumlahAlokasiTempatTidurAwalBulan = false
+    let errorPerbandinganJumlahHariPerawatan = false
+    let errorJumlahLamaDirawat = false
     req.body.data.forEach(element => { 
         // hitung jumlah pasien akhir bulan
         const pasienAkhirBulan = (parseInt(element.pasienAwalBulan) + parseInt(element.pasienMasuk) + parseInt(element.pasienPindahan)) -
@@ -126,6 +128,14 @@ export const insertRLTigaTitikDua =  async (req, res) => {
             errorJumlahHariPerawatan = false
             errorJumlahAlokasiTempatTidurAwalBulan = false
         }
+
+        if (jumlahHariPerawatan < element.jumlahLamaDirawat) {
+            errorPerbandinganJumlahHariPerawatan = true
+        }
+
+        if (element.jumlahLamaDirawat < (parseInt(element.pasienAwalBulan) + parseInt(element.pasienMasuk) + parseInt(element.pasienPindahan))) {
+            errorJumlahLamaDirawat = true
+        }
     })
 
     if (errorPasienAkhirBulan) {
@@ -148,6 +158,22 @@ export const insertRLTigaTitikDua =  async (req, res) => {
         res.status(400).send({
             status: false,
             message: 'jumlah alokasi tempat tidur awal bulan tidak boleh kurang dari nilai 1'
+        })
+        return
+    }
+
+    if (errorPerbandinganJumlahHariPerawatan) {
+        res.status(400).send({
+            status: false,
+            message: 'jumlah hari perawatan tidak boleh lebih kecil dari jumlah lama dirawat'
+        })
+        return
+    }
+
+    if (errorJumlahLamaDirawat) {
+        res.status(400).send({
+            status: false,
+            message: 'jumlah lama dirawat tidak boleh lebih kecil dari pasien awal bulan + pasien masuk + pasien pindahan'
         })
         return
     }
@@ -224,6 +250,8 @@ export const updateRLTigaTitikDua = async(req,res)=>{
     let errorPasienAkhirBulan = false
     let errorJumlahHariPerawatan = false
     let errorJumlahAlokasiTempatTidurAwalBulan = false
+    let errorPerbandinganJumlahHariPerawatan = false
+    let errorJumlahLamaDirawat = false
 
     // hitung jumlah pasien akhir bulan
     const pasienAkhirBulan = (parseInt(req.body.pasienAwalBulan) + parseInt(req.body.pasienMasuk) + parseInt(req.body.pasienPindahan)) -
@@ -252,6 +280,14 @@ export const updateRLTigaTitikDua = async(req,res)=>{
         errorJumlahAlokasiTempatTidurAwalBulan = true
     }
 
+    if (jumlahHariPerawatan < req.body.jumlahLamaDirawat) {
+        errorPerbandinganJumlahHariPerawatan = true
+    }
+
+    if (req.body.jumlahLamaDirawat < (parseInt(req.body.pasienAwalBulan) + parseInt(req.body.pasienMasuk) + parseInt(req.body.pasienPindahan))) {
+        errorJumlahLamaDirawat = true
+    }
+
     if (errorPasienAkhirBulan) {
         res.status(400).send({
             status: false,
@@ -272,6 +308,22 @@ export const updateRLTigaTitikDua = async(req,res)=>{
         res.status(400).send({
             status: false,
             message: 'jumlah alokasi tempat tidur awal bulan tidak boleh kurang dari nilai 1'
+        })
+        return
+    }
+
+    if (errorPerbandinganJumlahHariPerawatan) {
+        res.status(400).send({
+            status: false,
+            message: 'jumlah hari perawatan tidak boleh lebih kecil dari jumlah lama dirawat'
+        })
+        return
+    }
+
+    if (errorJumlahLamaDirawat) {
+        res.status(400).send({
+            status: false,
+            message: 'jumlah lama dirawat tidak boleh lebih kecil dari pasien awal bulan + pasien masuk + pasien pindahan'
         })
         return
     }
