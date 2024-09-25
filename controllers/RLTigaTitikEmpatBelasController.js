@@ -8,7 +8,7 @@ export const getDataRLTigaTitikEmpatBelasDetailKegiatan= (req, res) => {
   const joi = Joi.extend(joiDate) 
   const schema = joi.object({
       rsId: joi.string().required(),
-      tahun: joi.number().required(),
+      tahun: joi.date().required(),
       page: joi.number(),
       limit: joi.number()
   })
