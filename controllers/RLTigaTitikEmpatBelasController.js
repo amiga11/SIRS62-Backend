@@ -103,6 +103,7 @@ export const getDataRLTigaTitikEmpatBelasById = (req, res) => {
 export const insertDataRLTigaTitikEmpatBelas = async (req, res) => {
   const schema = Joi.object({
     tahun: Joi.number().required(),
+    tahunDanBulan: Joi.date().required(),
     data: Joi.array()
       .items(
         Joi.object().keys({
@@ -130,14 +131,14 @@ export const insertDataRLTigaTitikEmpatBelas = async (req, res) => {
       {
         rs_id: req.user.satKerId,
         user_id: req.user.id,
-        tahun: req.body.tahun,
+        tahun: req.body.tahunDanBulan,
       },
       { transaction }
     );
     const dataDetail = req.body.data.map((value, index) => {
 
       return {
-        tahun: req.body.tahun,
+        tahun: req.body.tahunDanBulan,
         rs_id: req.user.satKerId,
         rl_tiga_titik_empat_belas_id: rlInsertHeader.id,
         rl_tiga_titik_empat_belas_jenis_kegiatan_id: value.rLTigaTitikEmpatBelasJenisKegiatanId,
