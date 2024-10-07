@@ -49,6 +49,12 @@ export const rlTigaTitikDuaDetail = databaseSIRS.define('rl_tiga_titik_dua_detai
     pasien_keluar_mati_lebih_dari_atau_sama_dengan_48_jam: {
         type: DataTypes.INTEGER
     },
+    pasien_wanita_keluar_mati_kurang_dari_48_jam: {
+        type: DataTypes.INTEGER
+    },
+    pasien_wanita_keluar_mati_lebih_dari_atau_sama_dengan_48_jam: {
+        type: DataTypes.INTEGER
+    },
     jumlah_lama_dirawat: {
         type: DataTypes.INTEGER
     },
@@ -90,6 +96,8 @@ export const get = (req, callback) => {
         'rl_tiga_titik_dua_detail.pasien_keluar_hidup, ' +
         'rl_tiga_titik_dua_detail.pasien_keluar_mati_kurang_dari_48_jam, ' +
         'rl_tiga_titik_dua_detail.pasien_keluar_mati_lebih_dari_atau_sama_dengan_48_jam, ' +
+        'rl_tiga_titik_dua_detail.pasien_wanita_keluar_mati_kurang_dari_48_jam, ' +
+        'rl_tiga_titik_dua_detail.pasien_wanita_keluar_mati_lebih_dari_atau_sama_dengan_48_jam, ' +
         'rl_tiga_titik_dua_detail.jumlah_lama_dirawat, ' +
         'rl_tiga_titik_dua_detail.rincian_hari_perawatan_kelas_VVIP, ' +
         'rl_tiga_titik_dua_detail.rincian_hari_perawatan_kelas_VIP, ' +
@@ -163,6 +171,8 @@ export const show = (id, callback) => {
         'rl_tiga_titik_dua_detail.pasien_keluar_hidup, ' +
         'rl_tiga_titik_dua_detail.pasien_keluar_mati_kurang_dari_48_jam, ' +
         'rl_tiga_titik_dua_detail.pasien_keluar_mati_lebih_dari_atau_sama_dengan_48_jam, ' +
+        'rl_tiga_titik_dua_detail.pasien_wanita_keluar_mati_kurang_dari_48_jam, ' +
+        'rl_tiga_titik_dua_detail.pasien_wanita_keluar_mati_lebih_dari_atau_sama_dengan_48_jam, ' +
         'rl_tiga_titik_dua_detail.jumlah_lama_dirawat, ' +
         'rl_tiga_titik_dua_detail.rincian_hari_perawatan_kelas_VVIP, ' +
         'rl_tiga_titik_dua_detail.rincian_hari_perawatan_kelas_VIP, ' +
