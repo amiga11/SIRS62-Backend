@@ -310,7 +310,14 @@ import { getRLLimaTitikDua } from "../controllers/RLLimaTitikDuaController.js";
 // RL 5.3
 import { getRLLimatitikTiga } from "../controllers/RLLimaTitikTigaController.js";
 
+// Absensi
+
+import { insertValidasi } from "../controllers/ValidasiController.js"
+
 const router = express.Router();
+
+// Validasi
+router.post("/apisirs6v2/validasi", verifyToken, insertValidasi)
 
 // Token
 router.post("/apisirs6v2/login", login);
