@@ -236,8 +236,10 @@ export const insertDataRLTigaTitikTiga = async (req, res) => {
     }
 
     const dataDetail = req.body.data.map((value, index) => {
+      const now = new Date();
+      const date = now.getDate();
       return {
-        tahun: req.body.tahun,
+        tahun: `${req.body.tahun}-${req.body.bulan}-${date}`,
         bulan: req.body.bulan,
         rs_id: req.user.satKerId,
         rl_tiga_titik_tiga_id: rlTigaTitikTIgaID,
@@ -398,24 +400,32 @@ export const updateDataRLTigaTitikTiga = async (req, res) => {
 
 // Done
 export const deleteDataRLTigaTitikTiga = async (req, res) => {
-  let transaction;
-
   try {
-    const deleted = await rlTigaTitikTigaDetail.destroy({
+    const count = await rlTigaTitikTigaDetail.destroy({
       where: {
         id: req.params.id,
         rs_id: req.user.satKerId,
       },
     });
 
-    if (deleted) {
+    if (count == 0) {
+      res.status(404).send({
+        status: true,
+        message: "Data Not Found",
+        data: {
+          deleted_rows: count,
+        },
+      });
+    } else {
       res.status(201).send({
         status: true,
-        message: "Data Berhasil Dihapus",
+        message: "data deleted successfully",
+        data: {
+          deleted_rows: count,
+        },
       });
     }
   } catch (error) {
-    // await transaction.rollback();
     res.status(500).send({
       status: false,
       message: error,

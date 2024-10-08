@@ -37,6 +37,12 @@ export const rlTigaTitikLimaBelasDetail = databaseSIRS.define(
     jenis_kegiatan_rl_tiga_titik_lima_belas_id: {
       type: DataTypes.INTEGER,
     },
+    laki: {
+      type: DataTypes.INTEGER,
+    },
+    perempuan: {
+      type: DataTypes.INTEGER,
+    },
     jumlah: {
       type: DataTypes.INTEGER,
     },
