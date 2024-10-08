@@ -161,6 +161,8 @@ export const insertDataRLTigaTitikLimaBelas = async (req, res) => {
         Joi.object().keys({
           jenisKegiatanTigaTitikLimaBelasId: Joi.number().required(),
           jumlah: Joi.number().min(0),
+          laki: Joi.number().min(0),
+          perempuan: Joi.number().min(0),
         })
       )
       .required(),
@@ -194,6 +196,8 @@ export const insertDataRLTigaTitikLimaBelas = async (req, res) => {
         rl_tiga_titik_lima_belas_id: rlInsertHeader.id,
         jenis_kegiatan_rl_tiga_titik_lima_belas_id:
           value.jenisKegiatanTigaTitikLimaBelasId,
+        laki: value.laki,
+        perempuan: value.perempuan,
         jumlah: value.jumlah,
         user_id: req.user.id,
       };
@@ -234,6 +238,8 @@ export const insertDataRLTigaTitikLimaBelas = async (req, res) => {
 export const updateDataRLTigaTitikLimaBelas = async (req, res) => {
   const schema = Joi.object({
     jumlah: Joi.number().required(),
+    laki: Joi.number().required(),
+    perempuan: Joi.number().required(),
   });
   const { error, value } = schema.validate(req.body);
   if (error) {
@@ -257,6 +263,8 @@ export const updateDataRLTigaTitikLimaBelas = async (req, res) => {
 
     if (existingData) {
       if (existingData.jumlah !== req.body.jumlah) {
+        existingData.perempuan = req.body.perempuan;
+        existingData.laki = req.body.laki;
         existingData.jumlah = req.body.jumlah;
         await existingData.save();
         await transaction.commit();
