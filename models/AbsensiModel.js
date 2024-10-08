@@ -139,7 +139,18 @@ export const get = (req, callback) => {
         'rl_312_bulan_11, ' +
         'rl_312_bulan_12, '  +
         'rl_313, ' +
-        'rl_314, ' +
+        'rl_314_bulan_1, ' +
+        'rl_314_bulan_2, ' +
+        'rl_314_bulan_3, ' +
+        'rl_314_bulan_4, ' +
+        'rl_314_bulan_5, ' +
+        'rl_314_bulan_6, ' +
+        'rl_314_bulan_7, ' +
+        'rl_314_bulan_8, ' +
+        'rl_314_bulan_9, ' +
+        'rl_314_bulan_10, ' +
+        'rl_314_bulan_11, ' +
+        'rl_314_bulan_12, '  +
         'rl_315, ' +
         'rl_316, ' +
         'rl_317, ' +
